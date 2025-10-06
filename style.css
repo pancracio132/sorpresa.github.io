@@ -1,114 +1,110 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at top, #000000 0%, #1a1a1a 100%);
-  color: #fff;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at top, #0b0b1e, #000);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
 }
 
 header {
-  background: linear-gradient(90deg, #ff4da6, #6a00ff);
-  padding: 25px;
-  box-shadow: 0 0 25px rgba(255, 77, 166, 0.4);
+  text-align: center;
+  margin-top: 30px;
 }
 
-h1 {
-  color: #fff;
-  text-shadow: 0 0 10px rgba(255, 77, 166, 0.6);
-  font-size: 2rem;
+header h1 {
+  font-size: 3rem;
+  color: #ff4fd8;
+  text-shadow: 0 0 20px #ff4fd8;
 }
 
-section {
-  margin: 40px auto;
-  padding: 25px;
-  width: 85%;
-  max-width: 1000px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 15px rgba(255,255,255,0.1);
+header p {
+  color: #bbb;
+  font-style: italic;
 }
 
-.intro p {
-  font-size: 18px;
-  line-height: 1.6;
+#play-btn {
+  display: block;
+  margin: 20px auto;
+  background: #ff4fd8;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.gallery h2, .music h2, .message h2 {
-  color: #ff4da6;
-  text-shadow: 0 0 10px rgba(255,77,166,0.5);
+#play-btn:hover {
+  background: #ff80df;
+  box-shadow: 0 0 20px #ff4fd8;
 }
 
-.gallery .images {
+.collage img {
+  display: block;
+  width: 300px;
+  margin: 30px auto;
+  border-radius: 50%;
+  box-shadow: 0 0 25px #ff4fd8;
+}
+
+.gallery {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.gallery h2 {
+  color: #ff80df;
+  margin-bottom: 15px;
+}
+
+.carousel {
+  width: 80%;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.gallery img {
-  width: 250px;
+  overflow: hidden;
   border-radius: 15px;
-  border: 2px solid #ff4da6;
-  box-shadow: 0 0 15px rgba(255,77,166,0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 20px #ff4fd8;
 }
 
-.gallery img:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 25px rgba(255,77,166,0.7);
+.carousel img {
+  width: 100%;
+  transition: transform 1s ease-in-out;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 15px;
-}
-
-li {
-  margin: 8px 0;
-  font-size: 18px;
-  color: #ffb3d9;
-}
-
-.playlist-link {
-  margin-top: 20px;
-}
-
-.playlist-link a {
-  display: inline-block;
-  background: linear-gradient(90deg, #ff4da6, #6a00ff);
-  color: #fff;
-  padding: 12px 28px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  box-shadow: 0 0 20px rgba(255,77,166,0.4);
-  transition: all 0.3s ease;
-}
-
-.playlist-link a:hover {
-  background: linear-gradient(90deg, #6a00ff, #ff4da6);
-  box-shadow: 0 0 25px rgba(255,77,166,0.7);
-  transform: scale(1.05);
-}
-
-.message p {
-  font-size: 19px;
-  color: #f0e6ff;
-  line-height: 1.7;
-  margin-top: 15px;
+.playlist {
+  text-align: center;
+  margin-top: 50px;
 }
 
 footer {
-  background-color: #111;
-  padding: 20px;
-  font-size: 14px;
-  color: #ccc;
-  opacity: 0.8;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  margin: 40px 0;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* Efecto corazones flotando */
+.heart {
+  position: absolute;
+  color: #ff4fd8;
+  animation: float 6s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(0.5);
+  }
+  100% {
+    transform: translateY(-10vh) scale(1);
+    opacity: 0;
+  }
 }
